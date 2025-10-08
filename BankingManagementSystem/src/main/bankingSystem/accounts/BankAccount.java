@@ -1,7 +1,7 @@
 package main.bankingSystem.accounts;
 
-import bankingsystem.transactions.Transaction;
-import bankingsystem.transactions.TransactionType;
+import main.bankingSystem.transactions.Transaction;
+import main.bankingSystem.transactions.TransactionType;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -16,8 +16,7 @@ public abstract class BankAccount {
     private final List<Transaction> transactionHistory;
     private boolean isActive;
 
-    private static final DateTimeFormatter DATE_FORMATTER =
-            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     public BankAccount(String accountNumber, String accountHolder, double initialBalance) {
         if (initialBalance < 0) {
@@ -38,7 +37,9 @@ public abstract class BankAccount {
 
     // Abstract methods to be implemented by subclasses
     public abstract String getAccountType();
+
     public abstract double getInterestRate();
+
     public abstract double getMinimumBalance();
 
     public synchronized boolean deposit(double amount) {
@@ -98,7 +99,8 @@ public abstract class BankAccount {
 
         // Deduct from source and credit to target
         balance -= amount;
-        // note: accessing private field of another instance of same class is permitted in Java
+        // note: accessing private field of another instance of same class is permitted
+        // in Java
         targetAccount.balance += amount;
 
         addTransaction(new Transaction(TransactionType.TRANSFER_OUT, amount,
@@ -173,10 +175,22 @@ public abstract class BankAccount {
     }
 
     // Getters
-    public String getAccountNumber() { return accountNumber; }
-    public String getAccountHolder() { return accountHolder; }
-    public double getBalance() { return balance; }
-    public boolean isActive() { return isActive; }
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
     public List<Transaction> getTransactionHistory() {
         return new ArrayList<>(transactionHistory);
     }
