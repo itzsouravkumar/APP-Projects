@@ -1,24 +1,16 @@
-# =========================
-# IDE specific
-# =========================
 .idea/
 *.iml
 *.iws
 *.ipr
 .vscode/
 
-# =========================
-# Build output / compiled classes
-# =========================
 target/
+**/target/
 out/
 bin/
 build/
 **/build/
 
-# =========================
-# Java artifacts
-# =========================
 *.class
 *.jar
 *.war
@@ -29,40 +21,22 @@ build/
 *.log
 hs_err_pid*
 
-# =========================
-# Maven / Gradle caches
-# (keep wrapper JAR so project can build everywhere)
-# =========================
 .mvn/
 !/.mvn/wrapper/maven-wrapper.jar
 .gradle/
 
-# =========================
-# OS / Editor junk
-# =========================
 .DS_Store
 Thumbs.db
 *~
 *.swp
 *.swo
+.classpath
+.project
+.settings/
 
-# =========================
-# Temporary / backup
-# =========================
 *.bak
 *.tmp
 *.temp
-
-# =========================
-# Logs / reports
-# =========================
 logs/
 *.stacktrace
-
-# =========================
-# Misc
-# =========================
-# Uncomment if you later add dependency managers
-# node_modules/
-# dist/
 
